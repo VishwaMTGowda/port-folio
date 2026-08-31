@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(24px, 5vw, 35px); /* Responsive font size */
+  line-height: 40px;
+  color: #4b8bf5;
+  overflow: hidden;
+  height: 50px;
+  text-align: left;
+}
+
+.content__container {
+  font-weight: 600;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+}
+
+
+
+.content__container__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: change 8s infinite;
+  font-size: inherit;
+}
+
+.content__container__list__item {
+  line-height: 40px;
+  margin: 0;
+  white-space: nowrap; /* Prevents text wrapping */
+  
+}
+
+@keyframes change {
+  0%, 25% { transform: translateY(0); }
+  26%, 50% { transform: translateY(-40px); }
+  51%, 75% { transform: translateY(-80px); }
+  76%, 100% { transform: translateY(-120px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content {
+    text-align: center; /* Center align for smaller screens */
+  }
+  .content__container {
+    justify-content: center;
+  }
+  .content__container__list {
+    left: auto;
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    font-size: 24px; /* Reduce font size on small screens */
+  }
+  .content__container__list__item {
+    line-height: 40px;
+  }
+}
